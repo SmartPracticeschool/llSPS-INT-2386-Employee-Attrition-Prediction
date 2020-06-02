@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ML Model</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="login">
+  <h2>Employee Attrition Prediction</h2>
+  <p>Fill the details in the fields and find predict your employee's Attrition</p>
+  <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+    
+      <label for="usr">Age</label>
+      <input type="text" class="form-control" id="usr">
+      <label for="usr">Daily Rate</label>
+      <input type="text" class="form-control" id="usr">
+      <label for="usr">Distance From Home</label>
+      <input type="text" class="form-control" id="usr">
+      <p> Wite the distance in kms </p>
+      <label for="usr">Monthly Income</label>
+      <input type="text" class="form-control" id="usr">
+      <label for="usr">Over Time</label>
+      <input type="text" class="form-control" id="usr">
+      <p> If working overtime type 1 otherwise type 0 </p>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </div>
+ </form>
+ <br>
+   <br>
+   {{ prediction_text }}
+</div>
+
+</body>
+</html>
